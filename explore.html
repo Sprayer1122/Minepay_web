@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CryptoCoin - Free Cryptocurrency Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Add your CSS styling here */
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            /* Let's add a fun and creative font! */
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .container-xxl-py-5 .intro-section,
+        .milestones-section,
+        .bulletin-section,
+        .cards-section {
+            padding: 50px;
+        }
+
+
+
+        .intro-section {
+            background-color: #06263d;
+            height: 60vh;
+            /* Set the height to 80% of the viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .milestones-section {
+            background-color: #0085f9;
+        }
+
+        .bulletin-section {
+            background-color: #5f2222;
+            height: 45vh;
+        }
+
+        .milestone {
+            margin: 20px 0;
+            font-size: 24px;
+            /* Increase the font size for more impact */
+            font-weight: bold;
+            color: #f0f1f3;
+            /* A nice blue color to make the milestones stand out */
+        }
+
+        .cards-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .card {
+            width: 45%;
+            border: 2px solid #007bff;
+            /* Make the borders more prominent */
+            border-radius: 20px;
+            /* Rounded corners for a modern look */
+            padding: 30px;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* Add a subtle shadow for a 3D effect */
+            transition: transform 0.3s ease-in-out;
+            /* Add transition for smooth animation */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            /* Scale up the card on hover */
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .card-heading {
+            font-size: 28px;
+            /* Increase the font size for the card headings */
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Slightly reduce the margin for better alignment */
+            color: #d4dbe2;
+            /* Match the color with the milestones */
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 70%;
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 15px;
+            /* Make the video container rounded as well */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            /* Add a subtle shadow for a 3D effect */
+            transition: box-shadow 0.3s ease-in-out;
+            /* Add transition for smooth animation */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            /* Match the border radius with the container */
+            transition: transform 0.3s ease-in-out;
+            /* Add transition for smooth animation */
+        }
+
+        .video-container:hover iframe {
+            transform: scale(1.05);
+            /* Scale up the video on hover */
+        }
+
+        /* Boundary animation for video on hover */
+        .video-container:hover {
+            box-shadow: 0 0 15px #007bff, 0 0 30px #007bff;
+            /* Glowing blue border on hover */
+        }
+
+        /* Add some animation on hover for the cards */
+        .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Add a background animation to the milestones section */
+        .milestones-section {
+            background-image: linear-gradient(45deg, #7ee2c2, #63a8d6);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Two-column grid for the cards and milestones */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 200px;
+            margin-bottom: 50px;
+            /* Add the desired margin between the section of videos and the milestones */
+        }
+
+        /* Two-column grid for the bulletins */
+        .bulletin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 100px;
+            padding-top: 30px;
+        }
+
+        .bulletin {
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" role="status"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+        <a href="index.html" class="navbar-brand d-flex align-items-center">
+            <h2 class="m-0 text-primary"><img class="img-fluid me-2" src="img/logo.png" alt=""
+                    style="width: 45px;">MinePay</h2>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-4 py-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="explore.html" class="nav-item nav-link active">Explore</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Service</a>
+                <a href="roadmap.html" class="nav-item nav-link">Roadmap</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- About Start -->
+    <div class="container-xxl-py-5"
+        style="height: 800px; background-image: url('img/background-img.png'); background-size: 100% 100%;">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="padding-top: 300px;">
+                    <!-- Replace the first image with the bold text "Explore Our Product" -->
+                    <h1 style="font-weight: bold; color: #fff;">Explore Our Product</h1>
+                </div>
+                <div class="col-lg-6 animated fadeIn" style="padding-top: 100px;">
+                    <!-- Second column content -->
+                    <!-- Add any content you want for the second column -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+
+
+
+    <!-- Introduction of Product -->
+    <div class="intro-section">
+        <h1>Welcome to Minepay Execution Plan & Demo!</h1>
+        <p>
+            Minepay Project is highle dependent on exectution. The execution Plan id dived into two Phases, Phase 1 &
+            Phase 2, <br>
+            Also, Demo videos and simulation of Product are Below!!
+        </p>
+    </div>
+
+    <!-- Bulletin Section -->
+    <div class="bulletin-section">
+        <h2>Milestones</h2>
+        <div class="bulletin-grid">
+            <div class="bulletin">
+                <h3>Phase 1</h3>
+                <p>
+                    This phase primarily focuses on achieving product-market fit. During this round, we will launch our
+                    initial product
+                    to test and build an initial user base. We anticipate the timeline for this phase to be
+                    approximately 6-7 months before
+                    the final product launch. It is a crucial stage in our development process, and we have provided
+                    detailed information
+                    below along with demo simulations of the video.
+                </p>
+            </div>
+            <div class="bulletin">
+                <h3>Phase 2</h3>
+                <p>
+                    Phase 2 begins after Phase 1. In this phase, we will launch our final app featuring its unique
+                    Blockchain technology, which has been thoroughly tested during Phase 1.
+
+                    Phase 2 will unfold gradually, starting with the first Payment Interaction and Primary Services.
+                    Subsequently, we will rollout Layer-2 solutions for the Blockchain Technology.
+
+                    Below, you will find the major details discussed in Phase 2 along with a video.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Milestones -->
+    <div class="milestones-section">
+        <h2>Details About Phase 1 & Phase 2</h2>
+        <div class="grid">
+            <div>
+                <div class="milestone">Phase 1: Engagement and Community Building</div>
+                <p>
+                    During Phase 1, we embarked on a thrilling adventure of building a vibrant community around our
+                    product.
+                    Your invaluable feedback and unwavering support allowed us to shape the very foundation of our
+                    offering.
+                    Together, we sowed the seeds of a product that's built for the people, by the people. Our passion
+                    and
+                    dedication to creating an exceptional user experience brought us closer to our dreams.
+                    This is an ICO(Initial Coin Offering). Giving Users Ultimate chance to mine the coins before the
+                    launch.
+                    Mined Coins will be transaferred to main App after launch.
+                </p>
+            </div>
+            <!-- Phase 2 Card -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/VCJ56Jtrz3Y" frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+
+
+            <!-- Phase 1 Card -->
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/ibRYPUpI8wo" frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+            </div>
+            <div>
+                <div class="milestone">Phase 2: Final Product Launch</div>
+                <p>
+                    This Phase is expected to begin in March 2024. Mined coins of users from Phase 1 will be transferred
+                    to their
+                    respective accounts.
+                    Phase 2 is still in development and will regularly keep giving updates. Small simulation to show
+                    some working
+                    of blockchain with APP.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <h1 class="text-primary mb-4"><img class="img-fluid me-2" src="img/logo.png" alt=""
+                            style="width: 45px;">MinePay</h1>
+                    <span>MinePay is currently in Phase 1. We will soon be launching Phase 2,
+                        which will require people to keep their engagement up. Please follow our Instagram handle
+                        @Web3MadeEasy and our YouTube channel Web3MadeEasy.
+                    </span>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p>Please Enter Your Email Address To Subscribe To Our Weekly Newsletter.</p>
+                    <div class="position-relative">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
+                            placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Get In Touch</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>Noida, India</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+91 Not Available</p>
+                    <p><i class="fa fa-envelope me-3"></i>Not Available</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <!-- <h5 class="mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="">Currency Wallet</a>
+                    <a class="btn btn-link" href="">Currency Transaction</a>
+                    <a class="btn btn-link" href="">Bitcoin Investment</a>
+                    <a class="btn btn-link" href="">Token Sale</a> -->
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="index.html">Home</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="service.html">Our Services</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="mb-4">Follow Us</h5>
+                    <div class="d-flex">
+                        <a class="btn btn-square rounded-circle me-1" href="https://discord.gg/7fzhenMW"
+                            target="_blank"><i class="fab fa-discord"></i></a>
+                        <a class="btn btn-square rounded-circle me-1" href="https://www.instagram.com/web3madeeasy/"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square rounded-circle me-1"
+                            href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
+                        <!-- <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-linkedin-in"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a href="#">Minepay</a>, All Right Reserved.
+                    </div>
+                    <!-- <div class="col-md-6 text-center text-md-end"> -->
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
