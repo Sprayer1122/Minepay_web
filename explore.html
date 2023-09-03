@@ -65,7 +65,7 @@
 
         .bulletin-section {
             background-color: #5f2222;
-            height: 45vh;
+            height: auto;
         }
 
         .milestone {
@@ -190,6 +190,12 @@
             grid-template-columns: 1fr 1fr;
             grid-gap: 200px;
             margin-bottom: 50px;
+
+            @media (max-width: 1200px) {
+                display: flex;
+                flex-direction: column;
+                grid-gap: 5rem;
+            }
             /* Add the desired margin between the section of videos and the milestones */
         }
 
@@ -199,9 +205,15 @@
             grid-template-columns: 1fr 1fr;
             grid-gap: 100px;
             padding-top: 30px;
+
+            @media (max-width: 1200px) {
+                display: flex;
+                flex-direction: column;
+            }
         }
 
         .bulletin {
+            position: relative;
             padding: 15px;
             border-radius: 10px;
             background-color: #fff;
