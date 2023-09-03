@@ -29,6 +29,28 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        .content-container {
+            height: 800px;
+
+            @media (max-width: 500px) {
+                height: 200px;
+            }
+
+            @media (max-width: 1024px) and (min-width: 500px) {
+                height: 450px;
+            }
+
+        }
+
+        .heading-content {
+            padding-top: 300px;
+            @media (max-width: 1024px) {
+                padding-top: 0;
+            }
+            
+        }
+    </style>
 </head>
 
 <body>
@@ -77,10 +99,10 @@
     <!-- Header End -->
 
     <!-- About Start -->
-    <div class="container-xxl-py-5" style="height: 800px; background-image: url('img/tech.jpg'); background-size: 100% 100%;">
+    <div class="container-xxl-py-5 content-container" style="margin-top: 3rem; background-image: url('img/tech.jpg'); background-size: 100% 100%;">
         <div class="container">
             <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp d-flex justify-content-center align-items-center" data-wow-delay="0.1s" style="padding-top: 300px;">
+                <div class="col-lg-6 wow fadeInUp d-flex justify-content-center align-items-center heading-content" data-wow-delay="0.1s">
                     <!-- Replace the first image with the bold text "Explore Our Product" -->
                     <h1 style="font-weight: bold; color: #26849b; text-align: center; margin: 0;">Contact Us</h1>
                 </div>
