@@ -35,12 +35,6 @@
 <body>
 
     <style>
-        .iframe-container {
-            position: relative;
-            width: 800px;
-            height: 789px;
-        }
-
         .opaque-layer {
             position: absolute;
             bottom: 0;
@@ -52,6 +46,14 @@
             /* Adjust the opacity (last value) as needed */
             pointer-events: none;
             /* Allow click-through on the opaque layer */
+        }
+
+        .content-container {
+            width: 40%;
+
+            @media (max-width: 991px) {
+                width: 100%;
+            }
         }
     </style>
 
@@ -91,7 +93,7 @@
     <div class="container-fluid hero-header bg-light py-5 mb-5">
         <div class="container py-5">
             <div class="row g-5 align-items-center" style="overflow: hidden;">
-                <div class="col-lg-6" style="width: 40%;">
+                <div class="col-lg-6 content-container">
                     <h1 class="display-4 mb-3 animated slideInDown">Make Life Better With MinePay</h1>
                     <br>
                     <h3 class="animated slideInDown">The Future Of Digital Payments</h3>
@@ -99,20 +101,25 @@
                     <br>
                     <a href="explore.html" class="btn btn-primary py-3 px-4 animated slideInDown">Explore More</a>
                 </div>
-                <div class="col-lg-6 animated fadeIn" style="padding: 0;">
-                    <div class="iframe-container">
-                        <iframe src="https://earthrotate.framer.website//" width="800" height="789"
-                            frameborder="0"></iframe>
-                        <div class="opaque-layer"></div>
+                <div class="col-lg-6 animated fadeIn" style="padding: 0; text-align: center;">
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <button class="btn btn-primary rounded-circle p-4 animated pulse infinite"
+                                style="animation-duration: 3s; width: 150px; height: 150px; background-color: #007bff;">Tap
+                                To Mine</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button class="btn btn-primary rounded-circle p-4 animated pulse infinite"
+                                style="animation-duration: 3s; width: 150px; height: 150px; background-color: #007bff;">Pay
+                                Bill</button>
+                        </div>
                     </div>
-
-
-                    <!-- <img class="img-fluid animated pulse infinite" style="animation-duration: 3s;" src="img/hero-1.png" alt=""> -->
                 </div>
             </div>
         </div>
     </div>
     <!-- Header End -->
+
 
     <!-- Facts Start -->
     <div class="container-xxl bg-light py-5 my-5">
@@ -324,8 +331,8 @@
                 <div class="col-md-6">
                     <h1 class="text-primary mb-4"><img class="img-fluid me-2" src="img/logo.png" alt=""
                             style="width: 45px;">MinePay</h1>
-                    <span>MinePay is currently in Phase 1. We will soon be launching Phase 2, 
-                        which will require people to keep their engagement up. Please follow our Instagram handle 
+                    <span>MinePay is currently in Phase 1. We will soon be launching Phase 2,
+                        which will require people to keep their engagement up. Please follow our Instagram handle
                         @Web3MadeEasy and our YouTube channel Web3MadeEasy.
                     </span>
                 </div>
@@ -362,9 +369,13 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-4">Follow Us</h5>
                     <div class="d-flex">
-                        <a class="btn btn-square rounded-circle me-1" href="https://discord.gg/7fzhenMW" target="_blank"><i class="fab fa-discord"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href="https://www.instagram.com/web3madeeasy/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square rounded-circle me-1" href="https://discord.gg/7fzhenMW"
+                            target="_blank"><i class="fab fa-discord"></i></a>
+                        <a class="btn btn-square rounded-circle me-1" href="https://www.instagram.com/web3madeeasy/"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square rounded-circle me-1"
+                            href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
                         <!-- <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-linkedin-in"></i></a> -->
                     </div>
                 </div>
@@ -377,8 +388,8 @@
                         &copy; <a href="#">Minepay</a>, All Right Reserved.
                     </div>
                     <!-- <div class="col-md-6 text-center text-md-end"> -->
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
                     <!-- </div> -->
                 </div>
             </div>
