@@ -30,6 +30,23 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .content-container {
+            @media (max-width: 767px) {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .img-content {
+            width: 33%;
+
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -90,22 +107,23 @@
 
 
     <!-- Header Start -->
-    
+
     <div class="container-xxl py-5" style="display: flex; flex-direction: column; align-items: center;">
         <h1 data-wow-delay="0.1s">HOW THE SYSTEM WORKS!!</h1>
         <div class="container py-5">
             <div class="container-xxl py-5">
                 <div class="container">
-                    <div class="row g-5 align-items-center">
-                        <div style="width: 33%;" class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row g-5 align-items-center content-container">
+                        <div class="col-lg-6 wow fadeInUp img-content" data-wow-delay="0.1s">
                             <img class="img-fluid" src="img/about-1.png" alt="">
                             <p style="text-align: center; margin-top: 10px;">Join the Network via the App!!</p>
                         </div>
-                        <div style="width: 33%;" class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="col-lg-6 wow fadeInUp img-content" data-wow-delay="0.5s">
                             <img class="img-fluid" src="img/about-2.webp" alt="">
-                            <p style="text-align: center; margin-top: 10px;">Pay Bills With Verse Coins!! Earn UNI Coins</p>
+                            <p style="text-align: center; margin-top: 10px;">Pay Bills With Verse Coins!! Earn UNI Coins
+                            </p>
                         </div>
-                        <div style="width: 33%;" class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="col-lg-6 wow fadeInUp img-content" data-wow-delay="0.5s">
                             <img class="img-fluid" src="img/about-3.webp" alt="">
                             <p style="text-align: center; margin-top: 10px;">Mine Verse Coins With Your UNI Coin!!</p>
                         </div>
@@ -123,18 +141,20 @@
             <div class="row g-5 align-items-center">
                 <div class="container-xxl py-5">
                     <div class="container">
-                        <div class="row g-5 align-items-center">
-                            <div style="width: 33%;" class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="row g-5 align-items-center content-container">
+                            <div class="col-lg-6 wow fadeInUp img-content" data-wow-delay="0.1s">
                                 <img class="img-fluid" src="img/network-1.jpeg" alt="">
                                 <p style="text-align: center; margin-top: 20px;">Transaction from User-1 to User-2</p>
                             </div>
-                            <div style="width: 33%;" class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="col-lg-6 wow fadeInUp img-content" data-wow-delay="0.5s">
                                 <img class="img-fluid" src="img/network-2.jpeg" alt="">
-                                <p style="text-align: center; margin-top: 20px;">Validators verifying the transaction selected on the basis of consensus algorithm</p>
+                                <p style="text-align: center; margin-top: 20px;">Validators verifying the transaction
+                                    selected on the basis of consensus algorithm</p>
                             </div>
-                            <div style="width: 33%;" class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="col-lg-6 wow fadeInUp img-content" data-wow-delay="0.5s">
                                 <img class="img-fluid" src="img/network-3.jpeg" alt="">
-                                <p style="text-align: center; margin-top: 20px;">TRANSACTION IS VERFIED BY VALIDATOR AND VALIDATOR GETS REWARDED FOR THE SAME</p>
+                                <p style="text-align: center; margin-top: 20px;">TRANSACTION IS VERFIED BY VALIDATOR AND
+                                    VALIDATOR GETS REWARDED FOR THE SAME</p>
                             </div>
                         </div>
                     </div>
@@ -144,15 +164,15 @@
     </div>
 
 
-     <!-- Footer Start -->
-     <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <!-- Footer Start -->
+    <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-6">
                     <h1 class="text-primary mb-4"><img class="img-fluid me-2" src="img/logo.png" alt=""
                             style="width: 45px;">MinePay</h1>
-                    <span>MinePay is currently in Phase 1. We will soon be launching Phase 2, 
-                        which will require people to keep their engagement up. Please follow our Instagram handle 
+                    <span>MinePay is currently in Phase 1. We will soon be launching Phase 2,
+                        which will require people to keep their engagement up. Please follow our Instagram handle
                         @Web3MadeEasy and our YouTube channel Web3MadeEasy.
                     </span>
                 </div>
@@ -189,9 +209,13 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-4">Follow Us</h5>
                     <div class="d-flex">
-                        <a class="btn btn-square rounded-circle me-1" href="https://discord.gg/7fzhenMW" target="_blank"><i class="fab fa-discord"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href="https://www.instagram.com/web3madeeasy/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square rounded-circle me-1" href="https://discord.gg/7fzhenMW"
+                            target="_blank"><i class="fab fa-discord"></i></a>
+                        <a class="btn btn-square rounded-circle me-1" href="https://www.instagram.com/web3madeeasy/"
+                            target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square rounded-circle me-1"
+                            href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
                         <!-- <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-linkedin-in"></i></a> -->
                     </div>
                 </div>
@@ -204,8 +228,8 @@
                         &copy; <a href="#">Minepay</a>, All Right Reserved.
                     </div>
                     <!-- <div class="col-md-6 text-center text-md-end"> -->
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
+                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                    <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
                     <!-- </div> -->
                 </div>
             </div>
