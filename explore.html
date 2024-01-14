@@ -33,10 +33,11 @@
     <style>
         /* Add your CSS styling here */
         body {
-/*             font-family: "Comic Sans MS", cursive, sans-serif; */
-            /* Let's add a fun and creative font! */
-/*             line-height: 1.6; */
-/*             margin: 0; */
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F2F8FE; /* Set the desired background color */
         }
 
         .container-xxl-py-5 .intro-section,
@@ -45,8 +46,6 @@
         .cards-section {
             padding: 50px;
         }
-
-
 
         .intro-section {
             background-color: #06263d;
@@ -101,7 +100,7 @@
         }
 
         .card:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
             /* Scale up the card on hover */
         }
 
@@ -121,41 +120,43 @@
         }
 
         .video-container {
-            position: relative;
-            padding-bottom: 70%;
-            height: 0;
-            overflow: hidden;
-            width: 100%;
-            border-radius: 15px;
-            /* Make the video container rounded as well */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            /* Add a subtle shadow for a 3D effect */
-            transition: box-shadow 0.3s ease-in-out;
-            /* Add transition for smooth animation */
-        }
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto; /* Center the video container */
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            /* Match the border radius with the container */
-            transition: transform 0.3s ease-in-out;
-            /* Add transition for smooth animation */
-        }
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .video-container:hover iframe {
-            transform: scale(1.05);
-            /* Scale up the video on hover */
-        }
+.video-container:hover {
+    box-shadow: 0 0 15px #007bff, 0 0 30px #007bff;
+}
 
-        /* Boundary animation for video on hover */
-        .video-container:hover {
-            box-shadow: 0 0 15px #007bff, 0 0 30px #007bff;
-            /* Glowing blue border on hover */
-        }
+.video-container:hover iframe {
+    transform: scale(1.05);
+}
+
+@media (max-width: 767px) {
+    .video-container {
+        width: 100%;
+        max-width: none; /* Remove the maximum width for smaller screens */
+    }
+}
+
+
 
         /* Add some animation on hover for the cards */
         .card:hover {
@@ -219,6 +220,212 @@
             background-color: #fff;
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
         }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F2F8FE; /* Set the desired background color */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F2F8FE; /* Set the desired background color */
+        }
+
+        .opaque-layer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            /* Adjust the height as needed */
+            background-color: #F2F8FE;
+            /* Adjust the background color as needed */
+            pointer-events: none;
+        }
+
+        .container-fluid.hero-header {
+            padding: 0;
+            height: 100vh;
+            position: relative;
+        }
+
+        .s-page-1 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .s-section-1 {
+            width: 100%;
+        }
+
+        .s-section {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .content-container {
+            width: 40%;
+
+            @media (max-width: 991px) {
+                width: 100%;
+            }
+        }
+        
+
+        .gradient-heading {
+            background: linear-gradient(to bottom right, #2AF8F5 0%, #4F64E5 100%);
+            display: inline-block;
+            padding: 10px;
+            /* Adjust as needed */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientAnimation 5s infinite;
+            /* Adjust animation duration as needed */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .gradient-footer {
+            background: linear-gradient(to bottom right, #141e30 0%, #243b55 100%);
+            color: rgb(255, 255, 255);
+            /* Adjust text color for better contrast */
+        }
+
+        .container-fluid.gradient-footer {
+    margin-top: 0 !important;
+    position: relative;
+    z-index: 1;
+    padding-left: 0px; /* Adjust the padding-left to create space for the timeline */
+}
+
+
+        .minepay-icon i,
+        .minepay-info i,
+        .join-us-on {
+            background: linear-gradient(to bottom right, #2AF8F5 0%, #4F64E5 100%);
+            display: inline-block;
+            padding: 10px;
+            /* Adjust as needed */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientAnimation 5s infinite;
+            /* Adjust animation duration as needed */
+        }
+
+        .bubbles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bubble {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    background-color: #74c7d6;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: floatBubble var(--animation-duration) ease-in-out infinite;
+    background: linear-gradient(to bottom right, #2AF8F5 0%, #4F64E5 100%);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bubble h5 {
+    text-align: center;
+}
+
+.bubble:hover {
+    transform: scale(1.1);
+}
+
+@keyframes floatBubble {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeInScaleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInScaleAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.btn-crazy {
+    background: transparent;
+    background-clip: text;
+    color: transparent;
+    border: 2px solid #f0ff00; /* Bright yellow border */
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 116, 204, 0.7), 0 0 20px rgba(0, 170, 255, 0.7), 0 0 30px rgba(0, 58, 142, 0.7); /* Shades of blue for box-shadow */
+    animation: fadeInScaleAnimation 1s ease-in-out; /* Fade-in scale animation */
+    background-image: linear-gradient(to bottom right, #0074cc 0%, #00aaff 100%); /* Shades of blue */
+    -webkit-background-clip: text;
+}
+
+.btn-crazy:hover {
+    box-shadow: 0 0 10px rgba(0, 116, 204, 0.9), 0 0 20px rgba(0, 170, 255, 0.9), 0 0 30px rgba(0, 58, 142, 0.9); /* Shades of blue for box-shadow on hover */
+    border-color: #f0ff00; /* Bright yellow border on hover */
+    opacity: 0.8;
+}
+
     </style>
 </head>
 
@@ -230,11 +437,12 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+    <nav class="navbar navbar-expand-lg gradient-footer navbar-light sticky-top p-0 px-4 px-lg-5">
         <a href="index.html" class="navbar-brand d-flex align-items-center">
-            <h2>MinePay</h2>
+            <h1 class="text-primary mb-0">
+                <span class="gradient-heading">MinePay</span>
+            </h1>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -243,8 +451,6 @@
             <div class="navbar-nav ms-auto py-4 py-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="explore.html" class="nav-item nav-link active">Explore</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
                 <a href="roadmap.html" class="nav-item nav-link">Roadmap</a>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
@@ -253,36 +459,51 @@
     <!-- Navbar End -->
 
     <!-- About Start -->
-    <div class="container-xxl-py-5"
-        style="height: 800px; background-image: url('img/background-img.png'); background-size: 100% 100%;">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="padding-top: 300px;">
-                    <!-- Replace the first image with the bold text "Explore Our Product" -->
-                    <h1 style="font-weight: bold; color: #fff;">Explore Our Product</h1>
-                </div>
-                <div class="col-lg-6 animated fadeIn" style="padding-top: 100px;">
-                    <!-- Second column content -->
-                    <!-- Add any content you want for the second column -->
-                </div>
+<div class="container-xxl-py-5" style="height: 800px; position: relative; overflow: hidden;">
+    <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <source src="assets/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="container" style="position: relative; z-index: 1;">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="padding-top: 300px;">
+                <!-- Replace the first image with the bold text "Explore Our Product" -->
+                <!-- <h1 style="font-weight: bold; color: #fff;">Explore Our Product</h1> -->
+            </div>
+            <div class="col-lg-6 animated fadeIn" style="padding-top: 100px;">
+                <!-- Second column content -->
+                <!-- Add any content you want for the second column -->
             </div>
         </div>
     </div>
-    <!-- About End -->
 
-
-
-
-
-    <!-- Introduction of Product -->
-    <div class="intro-section">
-        <h1>Welcome to Minepay Execution Plan & Demo!</h1>
-        <p>
-            Minepay Project is highle dependent on exectution. The execution Plan id dived into two Phases, Phase 1 &
-            Phase 2, <br>
-            Also, Demo videos and simulation of Product are Below!!
-        </p>
+    <!-- Add your crazy animated button here -->
+    <div id="typewriter-container"
+        style="text-align: center; position: absolute; bottom: 50px; left: 50%; transform: translate(-50%, -50%); z-index: 1;">
+        <a href="p2.html" class="btn btn-crazy btn-lg btn-primary">Minepay Blockchain Explorer</a>
     </div>
+</div>
+<!-- About End -->
+
+
+
+
+   <!-- Introduction Section -->
+<div class="intro-section" style="background: linear-gradient(to bottom right, #2AF8F5 0%, #4F64E5 100%);">
+    <!--<img src="your-minepay-logo-path" alt="Minepay Logo" class="minepay-logo">-->
+    <h1>Minepay</h1>
+    <p style="color: #333;"> <!-- You can adjust the color code (#333) to your preferred darker color -->
+        Minepay is a mobile application that makes it possible for people to integrate WEB 3 into their daily lives.
+        Joining and using WEB 3 applications is currently a big challenge, as people often lack the necessary resources and knowledge.
+        Minepay solves these problems through its own Mobile app and own blockchain, making the process simpler for users.
+        The users Can Join Minepay though their Mobile Phones by Downloading Minepaay App and Start Mining Verse coin Using Uni Coin and become part of the
+        fastest growing Mobile Based Blockchain Ecosystem.
+
+    </p>
+</div>
+
+
 
     <!-- Bulletin Section -->
     <div class="bulletin-section">
@@ -291,25 +512,18 @@
             <div class="bulletin">
                 <h3>Phase 1</h3>
                 <p>
-                    This phase primarily focuses on achieving product-market fit. During this round, we will launch our
-                    initial product
-                    to test and build an initial user base. We anticipate the timeline for this phase to be
-                    approximately 6-7 months before
-                    the final product launch. It is a crucial stage in our development process, and we have provided
-                    detailed information
-                    below along with demo simulations of the video.
+                    This phase primarily focuses on creating the community of Users who wanted to Become part of Web3 and get hand on Experience.
+                    In this Phase users will get a chance to mine Verse Coin based on Uni Coins. Uni Coins in this Phase will be dependent on users number of referrals. 
+                    More referrals users does, More Verse Coins he can mine. This Phase is Just like an Airdrop and all the coins mined during this phase will be transferred to Users
+                    final wallet in Phase 2 where Users Coin can be Sold & Exchanged Easily. 
                 </p>
             </div>
             <div class="bulletin">
                 <h3>Phase 2</h3>
                 <p>
-                    Phase 2 begins after Phase 1. In this phase, we will launch our final app featuring its unique
-                    Blockchain technology, which has been thoroughly tested during Phase 1.
-
-                    Phase 2 will unfold gradually, starting with the first Payment Interaction and Primary Services.
-                    Subsequently, we will rollout Layer-2 solutions for the Blockchain Technology.
-
-                    Below, you will find the major details discussed in Phase 2 along with a video.
+                    In this Phase the Minepay Blockchain running across all the Mobile Nodes across the world would be Launched.
+                    Now, the users Mined all coins in Phase 1 will be transaferred to the Wallet of Phase 2 App where all coins can be easily exchanged and Sold through Minepay App itself. 
+                    Also, now users will be able to real transactions using Blockchain Technology using their Mobile Phones itself. And Able to Mine Verse Coin using Uni Coin on their Smartphone itself.
                 </p>
             </div>
         </div>
@@ -321,7 +535,7 @@
         <div class="grid">
             <div>
                 <div class="milestone">Phase 1: Engagement and Community Building</div>
-                <p>
+                <p style="color: #333;">
                     During Phase 1, we embarked on a thrilling adventure of building a vibrant community around our
                     product.
                     Your invaluable feedback and unwavering support allowed us to shape the very foundation of our
@@ -349,7 +563,7 @@
             </div>
             <div>
                 <div class="milestone">Phase 2: Final Product Launch</div>
-                <p>
+                <p style="color: #333;">
                     This Phase is expected to begin in March 2024. Mined coins of users from Phase 1 will be transferred
                     to their
                     respective accounts.
@@ -362,60 +576,48 @@
         </div>
     </div>
 
+
     <!-- Footer Start -->
-    <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid gradient-footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-6">
-                    <h1 class="text-primary mb-4"><img class="img-fluid me-2" src="img/logo.png" alt=""
-                            style="width: 45px;">MinePay</h1>
-                    <span>MinePay is currently in Phase 1. We will soon be launching Phase 2,
-                        which will require people to keep their engagement up. Please follow our Instagram handle
-                        @Web3MadeEasy and our YouTube channel Web3MadeEasy.
+                    <h1 class="text-primary mb-4">
+                        <span class="gradient-heading">MinePay</span>
+                    </h1>
+                    <span>If you have any inquiries or concerns, please reach out to Minepay through your app or via
+                        the email address provided below. The Minepay team is committed to addressing your requests
+                        within the next 24-48 hours.
                     </span>
                 </div>
                 <div class="col-md-6">
-                    <h5 class="mb-4">Newsletter</h5>
-                    <p>Please Enter Your Email Address To Subscribe To Our Weekly Newsletter.</p>
-                    <div class="position-relative">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    <h5 class="mb-4 join-us-on">Join Us On</h5>
+                    <p>Follow us on social media to stay updated with our latest news and announcements.</p>
+                    <div class="d-flex">
+                        <a class="btn btn-square rounded-circle me-1 icon-link minepay-icon"
+                            href="https://discord.gg/jWgvBhdRjy" target="_blank"><i
+                                class="fab fa-discord"></i></a>
+                        <a class="btn btn-square rounded-circle me-1 icon-link minepay-icon"
+                            href="https://www.instagram.com/web3madeeasy/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square rounded-circle me-1 icon-link minepay-icon"
+                            href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>Noida, India</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+91 Not Available</p>
-                    <p><i class="fa fa-envelope me-3"></i>Not Available</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- <h5 class="mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="">Currency Wallet</a>
-                    <a class="btn btn-link" href="">Currency Transaction</a>
-                    <a class="btn btn-link" href="">Bitcoin Investment</a>
-                    <a class="btn btn-link" href="">Token Sale</a> -->
+                    <h5 class="mb-4 minepay-info">Get In Touch</h5>
+                    <p style="font-size: 18px;"><i class="fa fa-map-marker-alt me-3"
+                            style="color: red;"></i>India</p>
+                    <p style="font-size: 18px;"><i class="fa fa-envelope me-3"
+                            style="color: rgb(93, 212, 63);"></i><a
+                            href="mailto:support@minepay.html">support@minepay.in</a></p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-4">Quick Links</h5>
                     <a class="btn btn-link" href="index.html">Home</a>
-                    <a class="btn btn-link" href="about.html">About Us</a>
                     <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="service.html">Our Services</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Follow Us</h5>
-                    <div class="d-flex">
-                        <a class="btn btn-square rounded-circle me-1" href="https://discord.gg/7fzhenMW"
-                            target="_blank"><i class="fab fa-discord"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href="https://www.instagram.com/web3madeeasy/"
-                            target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square rounded-circle me-1"
-                            href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i
-                                class="fab fa-youtube"></i></a>
-                        <!-- <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-linkedin-in"></i></a> -->
-                    </div>
+                    <a class="btn btn-link" href="roadmap.html">Roadmap</a>
                 </div>
             </div>
         </div>
@@ -425,21 +627,15 @@
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         &copy; <a href="#">Minepay</a>, All Right Reserved.
                     </div>
-                    <!-- <div class="col-md-6 text-center text-md-end"> -->
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
-                    <!-- </div> -->
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
             class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -452,6 +648,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
