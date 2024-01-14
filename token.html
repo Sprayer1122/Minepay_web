@@ -14,7 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -29,165 +30,575 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    
 </head>
 
 <body>
+
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #5cb8d7, #d3dcdc);
+        }
+
+        .opaque-layer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            /* Adjust the height as needed */
+            background-color: #F2F8FE;
+            /* Adjust the background color as needed */
+            pointer-events: none;
+        }
+
+        .container-fluid.hero-header {
+            padding: 0;
+            height: 100vh;
+            position: relative;
+        }
+
+        .s-page-1 {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .s-section-1 {
+            width: 100%;
+        }
+
+        .s-section {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .content-container {
+            width: 40%;
+
+            @media (max-width: 991px) {
+                width: 100%;
+            }
+        }
+
+        .gradient-heading {
+            background: linear-gradient(to bottom right, #2AF8F5 0%, #4F64E5 100%);
+            display: inline-block;
+            padding: 10px;
+            /* Adjust as needed */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientAnimation 5s infinite;
+            /* Adjust animation duration as needed */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .gradient-footer {
+            background: linear-gradient(to bottom right, #141e30 0%, #243b55 100%);
+            color: rgb(255, 255, 255);
+            /* Adjust text color for better contrast */
+        }
+
+        .minepay-icon i,
+        .minepay-info i,
+        .join-us-on {
+            background: linear-gradient(to bottom right, #2AF8F5 0%, #4F64E5 100%);
+            display: inline-block;
+            padding: 10px;
+            /* Adjust as needed */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientAnimation 5s infinite;
+            /* Adjust animation duration as needed */
+        }
+
+        .bubbles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bubble {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    background-color: #74c7d6;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: floatBubble var(--animation-duration) ease-in-out infinite;
+    background: linear-gradient(to bottom right, #2AF8F5 0%, #4F64E5 100%);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bubble h5 {
+    text-align: center;
+}
+
+.bubble:hover {
+    transform: scale(1.1);
+}
+
+@keyframes floatBubble {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.blockchain-explorer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+    .left-section {
+  flex: 0.;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: calc(115vh); /* Adjusted max-height to fit within the blockchain explorer class */
+  margin: 10px;
+  padding: 15px;
+}
+
+
+
+
+    .right-section {
+      flex: 1;
+      box-sizing: border-box;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 10px;
+      padding: 15px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    .blocks-list {
+      border-top: 1px solid #ccc;
+    }
+
+    .miners-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .miners-section li {
+      margin: 5px 0;
+    }
+
+    .metrics-section {
+      max-height: calc(100vh - 40px);
+      overflow-y: auto;
+      margin: 10px;
+    }
+
+    .live-feed ul {
+      list-style: none;
+      padding: 0;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .live-feed li {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    .transaction {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .hashing-section,
+    .mining-info,
+    .blocks-list,
+    .live-feed,
+    canvas {
+      margin-top: 10px;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-y: auto;
+    }
+
+    .blocks-list {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .block {
+      border-bottom: 1px solid #ccc;
+      padding: 15px 0;
+    }
+
+    .block h2 {
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .hash {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .metrics-section h2,
+    .miners-section h2 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .metrics-section p,
+    .miners-section ul,
+    .mining-info p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .mining-info span {
+      color: #333;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .blockchain-explorer {
+        flex-direction: column;
+      }
+
+      .right-section {
+        order: 1;
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .left-section {
+        order: 2;
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+
+    .main-heading {
+  text-align: center;
+  color: #333; /* Adjust the color as needed */
+  margin: 0; /* Remove default margin */
+}
+
+.metrics-chart {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        
+    </style>
+
+
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+    <nav class="navbar navbar-expand-lg gradient-footer navbar-light sticky-top p-0 px-4 px-lg-5">
         <a href="index.html" class="navbar-brand d-flex align-items-center">
-            <h2 class="m-0 text-primary"><img class="img-fluid me-2" src="img/icon-1.png" alt="" style="width: 45px;">CryptoCoin</h2>
+            <h1 class="text-primary mb-0">
+                <span class="gradient-heading">MinePay</span>
+            </h1>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-4 py-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
+                <a href="index.html" class="nav-item nav-link ">Home</a>
+                <a href="explore.html" class="nav-item nav-link">Explore</a>
                 <a href="roadmap.html" class="nav-item nav-link">Roadmap</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                    <div class="dropdown-menu shadow-sm m-0">
-                        <a href="feature.html" class="dropdown-item">Feature</a>
-                        <a href="token.html" class="dropdown-item active">Token Sale</a>
-                        <a href="faq.html" class="dropdown-item">FAQs</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-            <div class="h-100 d-lg-inline-flex align-items-center d-none">
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-square rounded-circle bg-light text-primary me-0" href=""><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
 
 
-    <!-- Header Start -->
-    <div class="container-fluid hero-header bg-light py-5 mb-5">
-        <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-4 mb-3 animated slideInDown">Token Sale</h1>
-                    <nav aria-label="breadcrumb animated slideInDown">
-                        <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Token Sale</li>
-                        </ol>
-                    </nav>
-                </div>
-                <div class="col-lg-6 animated fadeIn">
-                    <img class="img-fluid animated pulse infinite" style="animation-duration: 3s;" src="img/hero-2.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Header End -->
+    <div class="blockchain-explorer" id="blockchainExplorer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+   class MinersList {
+      constructor(maxMiners) {
+        this.minersListElement = document.createElement('div');
+        this.minersListElement.className = 'left-section';
+        this.maxMiners = maxMiners || 5; // Default to 5 if maxMiners is not provided
+      }
+
+      
+
+      render() {
+        this.minersListElement.innerHTML = `
+          <h2 class="main-heading">Active Miners</h2>
+          <ul id="minersList">
+            <li>0x1aBcDeFgHiJ</li>
+            <li>0x2aBcDeFgHiJ</li>
+            <li>0x3aBcDeFgHiJ</li>
+            <li>0x4aBcDeFgHiJ</li>
+            <li>0x5aBcDeFgHiJ</li>
+          </ul>
+        `;
+        document.getElementById('blockchainExplorer').appendChild(this.minersListElement);
+
+        // Trim the list to the maximum number of miners
+        const minersList = document.getElementById('minersList');
+        while (minersList.children.length > this.maxMiners) {
+          minersList.removeChild(minersList.lastChild);
+        }
+      }
+    }
+
+    class RightSection {
+      constructor() {
+        this.rightSectionElement = document.createElement('div');
+        this.rightSectionElement.className = 'right-section';
+        this.blocksContainer = document.createElement('div');
+        this.blocksContainer.className = 'blocks-list';
+        this.liveFeed = document.createElement('div');
+        this.liveFeed.className = 'live-feed';
+        this.liveFeed.innerHTML = '<h2>Live Transaction Feed</h2><ul></ul>';
+      }
+
+      render() {
+        this.rightSectionElement.innerHTML = `
+        <h1 class="main-heading">Minepay Blockchain Explorer</h1>
+          <div class="hashing-section" id="hashingSection">
+            <p>Real-time Hash: <span id="realTimeHash">abcdef123456...</span></p>
+          </div>
+          <div class="mining-info">
+            <p>Mining Average Speed: <span id="miningSpeed">12.5 TH/s</span></p>
+            <p>Difficulty: <span id="difficulty">1024</span></p>
+            <p>Network Hashrate: <span id="networkHashrate">50 TH/s</span></p>
+          </div>
+        `;
+        this.rightSectionElement.appendChild(this.liveFeed);
+        this.rightSectionElement.appendChild(this.blocksContainer);
+        document.getElementById('blockchainExplorer').appendChild(this.rightSectionElement);
+      }
+
+      generateRandomTransaction() {
+        const sender = this.generateRandomAddress();
+        const receiver = this.generateRandomAddress();
+        const amount = (Math.random() * 100).toFixed(2);
+        return { sender, receiver, amount };
+      }
+
+      generateBlock(blockNumber) {
+        const block = document.createElement('div');
+        block.className = 'block';
+        const minerAddress = this.generateRandomAddress();
+        block.innerHTML = `<h2>Block #${blockNumber}</h2>
+                           <p class="hash">Hash: <span id="block${blockNumber}Hash">abcdef123456...</span></p>
+                           <p>Mined by: <span id="block${blockNumber}Miner">${minerAddress}</span></p>`;
+        this.blocksContainer.prepend(block);
+
+        document.getElementById(`block${blockNumber}Hash`).textContent = this.generateRandomHash(64);
+        this.updateMinersList(minerAddress);
+      }
+
+      updateMinersList(address) {
+        const minersList = document.getElementById('minersList');
+        const listItem = document.createElement('li');
+        listItem.textContent = address;
+        minersList.prepend(listItem);
+      }
+
+      updateHashingSection() {
+        document.getElementById('realTimeHash').textContent = this.generateRandomHash(64);
+      }
+
+      updateMiningInfo() {
+        document.getElementById('miningSpeed').textContent = (Math.random() * 10 + 10).toFixed(2) + ' TH/s';
+        document.getElementById('difficulty').textContent = Math.floor(Math.random() * 2000) + 1;
+        document.getElementById('networkHashrate').textContent = (Math.random() * 50 + 50).toFixed(2) + ' TH/s';
+      }
+
+      updateLiveTransactionFeed(transaction) {
+        const liveFeed = this.liveFeed.querySelector('ul');
+        const transactionElement = document.createElement('li');
+        transactionElement.className = 'transaction';
+        transactionElement.textContent = `${transaction.sender} Started Mining.`;
+        liveFeed.prepend(transactionElement);
+      }
+
+      getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      generateRandomAddress() {
+        return '0x' + Math.random().toString(16).substr(2, 10);
+      }
+
+      generateRandomHash(length) {
+        let result = '';
+        const characters = 'ABCDEF0123456789';
+        for (let i = 0; i < length; i++) {
+          result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
+      }
+
+      getBlockCount() {
+        return this.blocksContainer.querySelectorAll('.block').length;
+      }
+    }
+
+    class MetricsSection {
+      constructor() {
+        this.metricsSectionElement = document.createElement('div');
+        this.metricsSectionElement.className = 'metrics-section';
+      }
+
+      render() {
+        this.metricsSectionElement.innerHTML = `
+          <h2>Blockchain Metrics</h2>
+          <p>Total Miners: <span id="totalMiners">42</span></p>
+          <p>Active Miners: <span id="activeMiners">20</span></p>
+          <p>Total Blocks Mined: <span id="totalBlocks">100</span></p>
+          <p>Average Block Time: <span id="averageBlockTime">15.75 seconds</span></p>
+        `;
+        document.getElementById('blockchainExplorer').appendChild(this.metricsSectionElement);
+      }
+
+      updateMetrics() {
+        const totalMiners = document.querySelectorAll('#minersList li').length;
+        const activeMiners = Math.floor(Math.random() * totalMiners) + 1;
+        const totalBlocks = document.querySelectorAll('.block').length;
+        const averageBlockTime = ((Math.random() * 5) + 15).toFixed(2);
+
+        document.getElementById('totalMiners').textContent = totalMiners;
+        document.getElementById('activeMiners').textContent = activeMiners;
+        document.getElementById('totalBlocks').textContent = totalBlocks;
+        document.getElementById('averageBlockTime').textContent = `${averageBlockTime} seconds`;
+      }
+    }
 
 
-    <!-- Token Sale Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6">Token Sale</h1>
-                <p class="text-primary fs-5 mb-5">Token Sale Countdown</p>
-            </div>
-            <div class="row g-3">
-                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="bg-light text-center p-3">
-                        <h1 class="mb-0">0</h1>
-                        <span class="text-primary fs-5">Days</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="bg-light text-center p-3">
-                        <h1 class="mb-0">0</h1>
-                        <span class="text-primary fs-5">Hours</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="bg-light text-center p-3">
-                        <h1 class="mb-0">0</h1>
-                        <span class="text-primary fs-5">Minutes</span>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 wow fadeIn" data-wow-delay="0.7s">
-                    <div class="bg-light text-center p-3">
-                        <h1 class="mb-0">0</h1>
-                        <span class="text-primary fs-5">Seconds</span>
-                    </div>
-                </div>
-                <div class="col-12 text-center py-4">
-                    <a class="btn btn-primary py-3 px-4" href="">Buy Token</a>
-                </div>
-                <div class="col-12 text-center">
-                    <img class="img-fluid m-1" src="img/payment-1.png" alt="" style="width: 50px;">
-                    <img class="img-fluid m-1" src="img/payment-2.png" alt="" style="width: 50px;">
-                    <img class="img-fluid m-1" src="img/payment-3.png" alt="" style="width: 50px;">
-                    <img class="img-fluid m-1" src="img/payment-4.png" alt="" style="width: 50px;">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Token Sale Start -->
+    class BlockchainExplorer {
+      constructor() {
+        this.blockchainElement = document.getElementById('blockchainExplorer');
+        this.leftSection = new MinersList();
+        this.rightSection = new RightSection();
+        this.metricsSection = new MetricsSection();
+      }
+
+      init() {
+        this.leftSection.render();
+        this.rightSection.render();
+        this.metricsSection.render();
+
+        setInterval(() => {
+          const blockNumber = this.rightSection.getBlockCount() + 1;
+          const transaction = this.rightSection.generateRandomTransaction();
+          this.rightSection.generateBlock(blockNumber);
+          this.rightSection.updateHashingSection();
+          this.rightSection.updateMiningInfo();
+          this.metricsSection.updateMetrics();
+          this.rightSection.updateLiveTransactionFeed(transaction);
+        }, this.rightSection.getRandomInt(10000, 15000)); // Adjusted interval duration
+      }
+    }
+  
+      // Instantiate and initialize BlockchainExplorer
+      const blockchainExplorer = new BlockchainExplorer();
+      blockchainExplorer.init();
+    </script>
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid gradient-footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-6">
-                    <h1 class="text-primary mb-4"><img class="img-fluid me-2" src="img/icon-1.png" alt="" style="width: 45px;">CryptoCoin</h1>
-                    <span>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</span>
+                    <h1 class="text-primary mb-4">
+                        <span class="gradient-heading">MinePay</span>
+                    </h1>
+                    <span>If you have any inquiries or concerns, please reach out to Minepay through your app or via the
+                        email address provided below. The Minepay team is committed to addressing your requests within
+                        the next 24-48 hours.
+                    </span>
                 </div>
                 <div class="col-md-6">
-                    <h5 class="mb-4">Newsletter</h5>
-                    <p>Clita erat ipsum et lorem et sit, sed stet lorem sit clita.</p>
-                    <div class="position-relative">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    <h5 class="mb-4 join-us-on">Join Us On</h5>
+                    <p>Follow us on social media to stay updated with our latest news and announcements.</p>
+                    <div class="d-flex">
+                        <a class="btn btn-square rounded-circle me-1 icon-link minepay-icon"
+                            href="https://discord.gg/jWgvBhdRjy"
+                            target="_blank"><i class="fab fa-discord"></i></a>
+                        <a class="btn btn-square rounded-circle me-1 icon-link minepay-icon"
+                            href="https://www.instagram.com/web3madeeasy/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-square rounded-circle me-1 icon-link minepay-icon"
+                            href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="">Currency Wallet</a>
-                    <a class="btn btn-link" href="">Currency Transaction</a>
-                    <a class="btn btn-link" href="">Bitcoin Investment</a>
-                    <a class="btn btn-link" href="">Token Sale</a>
+                    <h5 class="mb-4 minepay-info">Get In Touch</h5>
+                    <p style="font-size: 18px;"><i class="fa fa-map-marker-alt me-3" style="color: red;"></i>India</p>
+                <p style="font-size: 18px;"><i class="fa fa-envelope me-3" style="color: rgb(93, 212, 63);"></i><a
+                        href="mailto:support@minepay.html">support@minepay.in</a></p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Follow Us</h5>
-                    <div class="d-flex">
-                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <a class="btn btn-link" href=".html">Roadmap</a>
+                    <a class="btn btn-link" href="roadmap.html">Roadmap</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="explore.html">Explore</a>
                 </div>
             </div>
         </div>
@@ -195,11 +606,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                        &copy; <a href="#">Minepay</a>, All Right Reserved.
                     </div>
                 </div>
             </div>
@@ -209,7 +616,8 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
 
 
     <!-- JavaScript Libraries -->
