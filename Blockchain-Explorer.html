@@ -614,6 +614,64 @@
     </div>
     <!-- Footer End -->
 
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Function to generate a random address
+    function generateRandomAddress() {
+      return '0x' + Math.random().toString(16).substr(2, 10);
+    }
+
+    // Function to generate a random hash
+    function generateRandomHash(length) {
+      let result = '';
+      const characters = 'ABCDEF0123456789';
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+      return result;
+    }
+
+    // Function to generate dummy data and append to miners list
+    function addDummyMinersAndBlocks(totalMiners, totalBlocks) {
+      const minersList = document.getElementById('minersList');
+      const blocksContainer = document.querySelector('.blocks-list');
+
+      // Generate 100,000 dummy miners
+      for (let i = 0; i < totalMiners; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = generateRandomAddress();
+        minersList.appendChild(listItem);
+      }
+
+      // Calculate the number of active miners (at least 40% of total miners)
+      const activeMinersCount = Math.max(Math.floor(totalMiners * 0.4), 1);
+
+      // Generate 10,000 dummy blocks
+      for (let i = 0; i < totalBlocks; i++) {
+        const block = document.createElement('div');
+        block.className = 'block';
+        const blockNumber = blocksContainer.children.length + 1;
+        const minerAddress = generateRandomAddress();
+        block.innerHTML = `<h2>Block #${blockNumber}</h2>
+                           <p class="hash">Hash: <span id="block${blockNumber}Hash">abcdef123456...</span></p>
+                           <p>Mined by: <span id="block${blockNumber}Miner">${minerAddress}</span></p>`;
+        blocksContainer.prepend(block);
+
+        document.getElementById(`block${blockNumber}Hash`).textContent = generateRandomHash(64);
+
+        // Update miners list with active miners
+        if (i < activeMinersCount) {
+          const listItem = document.createElement('li');
+          listItem.textContent = minerAddress;
+          minersList.prepend(listItem);
+        }
+      }
+    }
+
+    // Add 100,000 dummy miners and 10,000 dummy blocks
+    addDummyMinersAndBlocks(100000, 10000);
+  });
+</script>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i
