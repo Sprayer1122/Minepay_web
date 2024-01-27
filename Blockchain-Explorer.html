@@ -499,35 +499,38 @@
     }
 
     class MetricsSection {
-      constructor() {
-        this.metricsSectionElement = document.createElement('div');
-        this.metricsSectionElement.className = 'metrics-section';
-      }
+  constructor() {
+    this.metricsSectionElement = document.createElement('div');
+    this.metricsSectionElement.className = 'metrics-section';
+  }
 
-      render() {
-        this.metricsSectionElement.innerHTML = `
-          <h2>Blockchain Metrics</h2>
-          <p>Total Miners: <span id="totalMiners">42</span></p>
-          <p>Active Miners: Fetching..</p>
-          <p>Total Blocks Mined: <span id="totalBlocks">100</span></p>
-          <p>Average Block Time: <span id="averageBlockTime">15.75 seconds</span></p>
-        `;
-        document.getElementById('blockchainExplorer').appendChild(this.metricsSectionElement);
-      }
+  render() {
+    this.metricsSectionElement.innerHTML = `
+      <h2>Blockchain Metrics</h2>
+      <p>Total Miners: <span id="totalMiners">42</span></p>
+      <p>Active Miners: Fetching..</p>
+      <p>Total Blocks Mined: <span id="totalBlocks">100</span></p>
+      <p>Average Block Time: <span id="averageBlockTime">15.75 seconds</span></p>
+    `;
+    document.getElementById('blockchainExplorer').appendChild(this.metricsSectionElement);
+  }
+
+  updateMetrics() {
+    const totalMiners = document.querySelectorAll('#minersList li').length;
+    const activeMiners = Math.floor(Math.random() * totalMiners) + 1;
+    const totalBlocks = document.querySelectorAll('.block').length;
+    const averageBlockTime = ((Math.random() * 5) + 15).toFixed(2);
+
+    document.getElementById('totalMiners').textContent = totalMiners;
+    document.getElementById('activeMiners').textContent = activeMiners;
+    document.getElementById('totalBlocks').textContent = totalBlocks;
+    document.getElementById('averageBlockTime').textContent = `${averageBlockTime} seconds`;
+  }
+}
+
+
 // <p>Active Miners: <span id="activeMiners">20</span></p>
-      updateMetrics() {
-        const totalMiners = document.querySelectorAll('#minersList li').length;
-        const activeMiners = Math.floor(Math.random() * totalMiners) + 1;
-        const totalBlocks = document.querySelectorAll('.block').length;
-        const averageBlockTime = ((Math.random() * 5) + 15).toFixed(2);
-
-        document.getElementById('totalMiners').textContent = totalMiners;
-        document.getElementById('activeMiners').textContent = activeMiners;
-        document.getElementById('totalBlocks').textContent = totalBlocks;
-        document.getElementById('averageBlockTime').textContent = `${averageBlockTime} seconds`;
-      }
-    }
-
+          // <p>Active Miners: Fetching..</p>ss
 
     class BlockchainExplorer {
       constructor() {
