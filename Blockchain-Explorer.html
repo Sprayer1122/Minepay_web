@@ -508,7 +508,7 @@
     this.metricsSectionElement.innerHTML = `
       <h2>Blockchain Metrics</h2>
       <p>Total Miners: <span id="totalMiners">42</span></p>
-      <p>Active Miners: Fetching..</p>
+      <p>Active Miners: <span id="activeMiners">Fetching..</span></p>
       <p>Total Blocks Mined: <span id="totalBlocks">100</span></p>
       <p>Average Block Time: <span id="averageBlockTime">15.75 seconds</span></p>
     `;
@@ -527,6 +527,7 @@
     document.getElementById('averageBlockTime').textContent = `${averageBlockTime} seconds`;
   }
 }
+
 
 
 // <p>Active Miners: <span id="activeMiners">20</span></p>
