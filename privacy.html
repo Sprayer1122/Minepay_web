@@ -32,6 +32,81 @@
 </head>
 
 <body>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F2F8FE;
+            /* Set the desired background color */
+        }
+
+        
+
+        .pt-5 {
+            padding-top: 0rem !important;
+        }
+
+        
+        .gradient-heading {
+            background: linear-gradient(to bottom right, #2AF8F5 0%, #4F64E5 100%);
+            display: inline-block;
+            padding: 10px;
+            /* Adjust as needed */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientAnimation 5s infinite;
+            /* Adjust animation duration as needed */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .gradient-footer {
+            background: linear-gradient(to bottom right, #141e30 0%, #243b55 100%);
+            color: rgb(255, 255, 255);
+            margin: 0;
+            /* Adjust text color for better contrast */
+        }
+
+        .minepay-icon i,
+        .minepay-info i,
+        .join-us-on {
+            background: linear-gradient(to bottom right, #2AF8F5 0%, #4F64E5 100%);
+            display: inline-block;
+            padding: 10px;
+            /* Adjust as needed */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradientAnimation 5s infinite;
+            /* Adjust animation duration as needed */
+        }
+
+
+        /* Additional styles for Terms and Conditions */
+        .terms-heading {
+            text-align: center;
+            font-size: 40px; /* Adjust font size as needed */
+            margin-bottom: 30px; /* Adjust margin as needed */
+        }
+    </style>
+
+
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
@@ -39,10 +114,12 @@
     <!-- Spinner End -->
 
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
+     <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg gradient-footer navbar-light sticky-top p-0 px-4 px-lg-5">
         <a href="index.html" class="navbar-brand d-flex align-items-center">
-            <h2 class="m-0 text-primary"><img class="img-fluid me-2" src="img/logo.png" alt="" style="width: 45px;">MinePay</h2>
+            <h1 class="text-primary mb-0">
+                <span class="gradient-heading">MinePay</span>
+            </h1>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -51,10 +128,8 @@
             <div class="navbar-nav ms-auto py-4 py-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="explore.html" class="nav-item nav-link">Explore</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link active">Service</a>
                 <a href="roadmap.html" class="nav-item nav-link">Roadmap</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.html" class="nav-item nav-link ">Contact</a>
             </div>
         </div>
     </nav>
@@ -68,9 +143,11 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-primary">Terms and Conditions</h2>
+                    <!-- Added class and style for center alignment and font size -->
+                    <h2 class="text-primary terms-heading">Terms and Conditions</h2>
 
                     <ol>
+                        <!-- Your list items go here -->
                         <li><strong>Acceptance of Terms</strong><br>
                             By downloading, installing, or using the Minepay mobile application ("App"), you agree to be bound
                             by these Terms and Conditions. If you do not agree with any part of these terms, you may not use
@@ -107,77 +184,59 @@
         </div>
         <!-- End of Terms and Conditions Section -->
 
-
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-md-6">
-                    <h1 class="text-primary mb-4"><img class="img-fluid me-2" src="img/logo.png" alt=""
-                            style="width: 45px;">MinePay</h1>
-                    <span>MinePay is currently in Phase 1. We will soon be launching Phase 2, 
-                        which will require people to keep their engagement up. Please follow our Instagram handle 
-                        @Web3MadeEasy and our YouTube channel Web3MadeEasy.
-                    </span>
-                </div>
-                <div class="col-md-6">
-                    <h5 class="mb-4">Newsletter</h5>
-                    <p>Please Enter Your Email Address To Subscribe To Our Weekly Newsletter.</p>
-                    <div class="position-relative">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text"
-                            placeholder="Your email">
-                        <button type="button"
-                            class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>Noida, India</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+91 Not Available</p>
-                    <p><i class="fa fa-envelope me-3"></i>Not Available</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <!-- <h5 class="mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="">Currency Wallet</a>
-                    <a class="btn btn-link" href="">Currency Transaction</a>
-                    <a class="btn btn-link" href="">Bitcoin Investment</a>
-                    <a class="btn btn-link" href="">Token Sale</a> -->
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="index.html">Homed</a>
-                    <a class="btn btn-link" href="about.html">About Us</a>
-                    <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <!-- <a class="btn btn-link" href="">Terms & Condition</a> -->
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Follow Us</h5>
-                    <div class="d-flex">
-                        <a class="btn btn-square rounded-circle me-1" href="https://discord.gg/7fzhenMW" target="_blank"><i class="fab fa-discord"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href="https://www.instagram.com/web3madeeasy/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <!-- <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-linkedin-in"></i></a> -->
-                    </div>
+   <!-- Footer Start -->
+   <div class="container-fluid gradient-footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-md-6">
+                <h1 class="text-primary mb-4">
+                    <span class="gradient-heading">MinePay</span>
+                </h1>
+                <span>If you have any inquiries or concerns, please reach out to Minepay through your app or via the
+                    email address provided below. The Minepay team is committed to addressing your requests within
+                    the next 24-48 hours.
+                </span>
+            </div>
+            <div class="col-md-6">
+                <h5 class="mb-4 join-us-on">Join Us On</h5>
+                <p>Follow us on social media to stay updated with our latest news and announcements.</p>
+                <div class="d-flex">
+                    <a class="btn btn-square rounded-circle me-1 icon-link minepay-icon"
+                        href="https://discord.gg/jWgvBhdRjy" target="_blank"><i class="fab fa-discord"></i></a>
+                    <a class="btn btn-square rounded-circle me-1 icon-link minepay-icon"
+                        href="https://www.instagram.com/web3madeeasy/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square rounded-circle me-1 icon-link minepay-icon"
+                        href="https://www.youtube.com/@Web3MadeEasy_/featured" target="_blank"><i
+                            class="fab fa-youtube"></i></a>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4 minepay-info">Get In Touch</h5>
+                <p style="font-size: 18px;"><i class="fa fa-map-marker-alt me-3" style="color: red;"></i>India</p>
+            <p style="font-size: 18px;"><i class="fa fa-envelope me-3" style="color: rgb(93, 212, 63);"></i><a
+                    href="mailto:support@minepay.html">support@minepay.in</a></p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <h5 class="mb-4">Quick Links</h5>
+                <a class="btn btn-link" href="index.html">Home</a>
+                <a class="btn btn-link" href="roadmap.html">Roadmap</a>
+                <a class="btn btn-link" href="explore.html">Explore</a>
+                <a class="btn btn-link" href="contact.html">Contact</a>
+            </div>
         </div>
-        <div class="container-fluid copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Minepay</a>, All Right Reserved.
-                    </div>
-                    <!-- <div class="col-md-6 text-center text-md-end"> -->
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <!-- Designed By <a href="https://htmlcodex.com">HTML Codex</a> -->
-                    <!-- </div> -->
+    </div>
+    <div class="container-fluid copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a href="#">Minepay</a>, All Right Reserved.
                 </div>
             </div>
         </div>
     </div>
-    <!-- Footer End -->
+</div>
+<!-- Footer End -->
 
 
     <!-- Back to Top -->
