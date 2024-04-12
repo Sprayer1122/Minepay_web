@@ -113,6 +113,31 @@
             font-size: 40px; /* Adjust font size as needed */
             margin-bottom: 30px; /* Adjust margin as needed */
         }
+
+    .whitepaper-link {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px; /* Adjust the padding as needed */
+    color: transparent; /* Make the text transparent initially */
+    background-image: linear-gradient(to right, #4F64E5, #2AF8F5); /* Set the gradient colors */
+    background-clip: text; /* Apply the gradient to the text */
+    -webkit-background-clip: text;
+    animation: gradientAnimation 5s infinite linear; /* Apply the animation with a linear timing function */
+    background-size: 200% 100%; /* Set the background size to create the sliding effect */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
     </style>
 
 
@@ -138,10 +163,13 @@
                 <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="explore.html" class="nav-item nav-link">Explore</a>
                 <a href="roadmap.html" class="nav-item nav-link">Roadmap</a>
-                <a href="contact.html" class="nav-item nav-link ">Contact</a>
+                <a href="https://firebasestorage.googleapis.com/v0/b/minepay-71a6b.appspot.com/o/Minepay%20Whitepaper%202024.pdf?alt=media&token=13ad4da0-052b-485b-af6f-28b13504fd88" class="nav-item nav-link" target="_blank" rel="noopener noreferrer">
+                    <span class="whitepaper-link">WhitePaper</span>
+                </a>
             </div>
         </div>
     </nav>
+    <!-- Navbar End -->
     <!-- Navbar End -->
 
     <!-- Main Content Start -->
